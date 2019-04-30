@@ -56,7 +56,7 @@ class App extends Component {
   }
   componentWillUpdate() {
     console.log('componentWillUpdate!');
-    this.initPie();
+    this.initPie(this.state.pieId);
   }
   render() {
     return (

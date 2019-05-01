@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Layout, Menu, Icon } from 'antd';
-import config from './chart/config';
-
-import echarts from 'echarts/lib/echarts';
-import 'echarts/lib/chart/pie';
-import 'echarts/lib/component/title';
+import {BrowserRouter as Router,Route,Link} from 'react-router-dom';
+import Home from './comp/Home';
+import User from './comp/user';
 
 const { Header, Sider, Content } = Layout;
 
@@ -14,9 +12,7 @@ const SubMenu = Menu.SubMenu;
 class App extends Component {
   constructor(props) {
     super(props)
-    let id = ('_' + Math.random()).replace('.', '_');
     this.state = {
-      pieId: 'pie' + id,
       collapsed: false
     }
   }
@@ -33,33 +29,10 @@ class App extends Component {
     window.close();
   };
 
-  initPie = (id) => {
-    let mychart = echarts.getInstanceByDom(document.getElementById(id));
-    if (mychart === undefined) {
-      mychart = echarts.init(document.getElementById(id));
-    }
-    mychart.setOption(config);
-  }
-
-  componentDidMount() {
-    this.initPie(this.state.pieId);
-    // setTimeout(()=>{
-    //   config.series[0].data = [
-    //     {value:355,name:'中国'},
-    //     {value:310, name:'美国'},
-    //     {value:274, name:'英国'},
-    //     {value:235, name:'俄罗斯'},
-    //     {value:400, name:'法国'}
-    //   ].sort(function(a,b){return a.value - b.value;});
-    //   this.initPie(this.state.pieId);
-    // },1000*5);
-  }
-  componentWillUpdate() {
-    console.log('componentWillUpdate!');
-    this.initPie(this.state.pieId);
-  }
   render() {
     return (
+      <Router>
+        <div>
       <Layout >
         <Layout >
           <Header style={{ paddingLeft: 0, paddingRight: 0, height: 70, "-webkit-app-region": "drag" }}>
@@ -83,16 +56,22 @@ class App extends Component {
             collapsible
             collapsed={this.state.collapsed}
           >
-            <Menu theme="dark" mode="inline" defaultSelectedKeys={['2']}>
-              <Menu.Item key="1">
+            <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+            <Menu.Item key="1">
+              <Link to="/user/" >
+                <Icon type="user" />
+                <span>用户</span>
+                </Link>
+              </Menu.Item>
+              <Menu.Item key="2">
                 <Icon type="video-camera" />
                 <span>视频</span>
               </Menu.Item>
-              <Menu.Item key="2">
+              <Menu.Item key="3">
                 <Icon type="customer-service" />
                 <span>音乐</span>
               </Menu.Item>
-              <Menu.Item key="3">
+              <Menu.Item key="4">
                 <Icon type="file-markdown" />
                 <span>MD文档</span>
               </Menu.Item>
@@ -109,12 +88,18 @@ class App extends Component {
             <Content style={{
               margin: '24px 16px', padding: 15, background: '#fff', minHeight: 280,
             }}
-            ><div id={this.state.pieId} style={{ margin: '24px 16px', padding: 15, background: '#fff', minHeight: 280, }}>
+            ><Router>
+              <div>
+              <Route path='/' component={Home}></Route>
+              <Route path='/User' component={User}></Route>
               </div>
+              </Router>
             </Content>
           </Layout>
         </Layout>
       </Layout>
+      </div>
+      </Router>
     );
   }
 }

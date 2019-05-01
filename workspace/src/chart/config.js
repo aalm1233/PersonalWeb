@@ -17,7 +17,7 @@ module.exports = {
     visualMap: {
         show: false,
         min: 80,
-        max: 600,
+        max: 200,
         inRange: {
             colorLightness: [0, 1]
         }
@@ -51,13 +51,6 @@ module.exports = {
                     smooth: 0.2,
                     length: 10,
                     length2: 20
-                }
-            },
-            itemStyle: {
-                normal: {
-                    color: '#c23531',
-                    shadowBlur: 200,
-                    shadowColor: 'rgba(0, 0, 0, 0.5)'
                 }
             },
 

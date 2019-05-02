@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import config from '../chart/config';
 
 import echarts from 'echarts/lib/echarts';
-import 'echarts/lib/chart/pie';
+import 'echarts/lib/chart/parallel';
 import 'echarts/lib/component/title';
 
 class Home extends Component{
@@ -10,7 +10,7 @@ class Home extends Component{
         super(props);
         let id = ('_'+Math.random()).replace('.','_');
         this.state = {
-            pieId : 'pie' +id,
+            lineId : 'line' +id,
         }
     }
 
@@ -22,25 +22,15 @@ class Home extends Component{
         mychart.setOption(config);
       }
       componentDidMount() {
-        this.initPie(this.state.pieId);
-        // setTimeout(()=>{
-        //   config.series[0].data = [
-        //     {value:355,name:'中国'},
-        //     {value:310, name:'美国'},
-        //     {value:274, name:'英国'},
-        //     {value:235, name:'俄罗斯'},
-        //     {value:400, name:'法国'}
-        //   ].sort(function(a,b){return a.value - b.value;});
-        //   this.initPie(this.state.pieId);
-        // },1000*5);
+        this.initPie(this.state.lineId);
       }
       componentWillUpdate() {
-        this.initPie(this.state.pieId);
+        this.initPie(this.state.lineId);
       }
 
       render(){
           return(
-            <div id={this.state.pieId} style={{ margin: '24px 16px', padding: 15, background: '#fff', minHeight: 280, }}>
+            <div id={this.state.lineId} style={{background: '#fff', minHeight: 280,Width:'100%' }}>
             </div>
           );
       }

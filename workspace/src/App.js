@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Layout, Menu, Icon } from 'antd';
-import {BrowserRouter as Router,Route,Link} from 'react-router-dom';
-import Home from './comp/Home';
-import User from './comp/user';
+import {BrowserRouter} from 'react-router-dom';
+import CustomMenu from './Menu/CustomMenu'
+import ContentMain from './components/ContentMain';
 
 const { Header, Sider, Content } = Layout;
 
@@ -31,7 +31,7 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
+      <BrowserRouter>
         <div>
       <Layout >
         <Layout >
@@ -56,26 +56,7 @@ class App extends Component {
             collapsible
             collapsed={this.state.collapsed}
           >
-            <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-            <Menu.Item key="1">
-              <Link to="/user/" >
-                <Icon type="user" />
-                <span>用户</span>
-                </Link>
-              </Menu.Item>
-              <Menu.Item key="2">
-                <Icon type="video-camera" />
-                <span>视频</span>
-              </Menu.Item>
-              <Menu.Item key="3">
-                <Icon type="customer-service" />
-                <span>音乐</span>
-              </Menu.Item>
-              <Menu.Item key="4">
-                <Icon type="file-markdown" />
-                <span>MD文档</span>
-              </Menu.Item>
-            </Menu>
+            <CustomMenu/>
           </Sider>
           <Layout>
             <Header style={{ background: '#fff', padding: 0 }}>
@@ -85,21 +66,16 @@ class App extends Component {
                 onClick={this.toggle}
               />
             </Header>
-            <Content style={{
-              margin: '24px 16px', padding: 15, background: '#fff', minHeight: 280,
+            <Content style={{ padding: 0, background: '#fff', minHeight: 280,
             }}
-            ><Router>
-              <div>
-              <Route path='/' component={Home}></Route>
-              <Route path='/User' component={User}></Route>
-              </div>
-              </Router>
+            >
+              <ContentMain></ContentMain>
             </Content>
           </Layout>
         </Layout>
       </Layout>
       </div>
-      </Router>
+      </BrowserRouter>
     );
   }
 }

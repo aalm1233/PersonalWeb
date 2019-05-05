@@ -1,0 +1,25 @@
+{
+    "menuData":[
+        {
+            "title":"主页",
+            "icon":"home",
+            "key":"/"
+        },{
+            "title":"用户",
+            "icon":"user",
+            "key":"/page/User"
+        },{
+            "title":"视频",
+            "icon":"video-camera",
+            "key":"/page/Video"
+        },{
+            "title":"音乐",
+            "icon":"customer-service",
+            "key":"/page/Music"
+        },{
+            "title":"MD文档",
+            "icon":"file-markdown",
+            "key":"/page/Markdown"
+        }
+    ]
+}

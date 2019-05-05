@@ -1,31 +1,9 @@
 import React,{Component} from 'react';
 import {Link} from 'react-router-dom';
 import {Menu,Icon} from 'antd';
-global.menus = [
-    {
-        title:"主页",
-        icon:"home",
-        key:"/"
-    },{
-        title:"用户",
-        icon:"user",
-        key:"/page/User"
-    },{
-        title:"视频",
-        icon:"video-camera",
-        key:"/page/Video"
-    },{
-        title:"音乐",
-        icon:"customer-service",
-        key:"/page/Music"
-    },{
-        title:"MD文档",
-        icon:"file-markdown",
-        key:"/page/Markdown"
-    },
-];
+import {menuData} from '../data/MenuData.json'
 
-const menus = global.menus;
+const menus = menuData;
 
 class CustomMenu extends Component {
     renderSubMenu = ({key,icon,title,subs}) =>{

@@ -8,7 +8,6 @@ class Video extends Component{
         let id = ('_'+Math.random()).replace('.','_');
         this.state = {
             VideoId : "Video" + id,
-            source : sources['movie'],
         }
     }
     // componentWillUnmount(){
@@ -18,7 +17,7 @@ class Video extends Component{
         return(<div>
             <div id={this.state.VideoId}>
                 <Player ref="player" VideoId="video-1">
-                <source src={require("../../resources/anime.mp4")}></source>
+                <source src={require("../../resources/anime.mp4")}></source>+
                 </Player>
             </div>
             </div>

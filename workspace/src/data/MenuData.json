@@ -20,6 +20,10 @@
             "title":"MD文档",
             "icon":"file-markdown",
             "key":"/page/Markdown"
+        },{
+            "title":"文件目录",
+            "icon":"file",
+            "key":"/page/File"
         }
     ]
 }

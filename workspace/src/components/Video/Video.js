@@ -10,15 +10,12 @@ class Video extends Component{
             VideoId : "Video" + id,
         }
     }
-    // componentWillUnmount(){
-    //     flvPlayer.destroy();
-    // }
     render(){
         return(<div>
             <div id={this.state.VideoId}>
-                <Player ref="player" VideoId="video-1">
+                {/* <Player ref="player" VideoId="video-1">
                 <source src={require("../../resources/anime.mp4")}></source>+
-                </Player>
+                </Player> */}
             </div>
             </div>
         )

@@ -3,7 +3,7 @@ import {Route,Switch} from 'react-router-dom';
 import Home from './Home';
 import User from './user';
 import Music from './Music';
-import Vedio from './Vedio';
+import Video from './Video/Video';
 
 class ContentMain extends React.Component {
     render() {
@@ -13,7 +13,7 @@ class ContentMain extends React.Component {
                     <Route exact path='/' component={Home}/>
                     <Route exact path='/page/User' component={User}/>
                     <Route exact path='/page/Music' component={Music}/>
-                    <Route exact path='/page/Video' component={Vedio}/>
+                    <Route exact path='/page/Video' component={Video}/>
                 </Switch>
             </div>
         )

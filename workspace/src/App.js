@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Layout, Menu, Icon } from 'antd';
+import { Layout ,Icon } from 'antd';
 import {BrowserRouter} from 'react-router-dom';
+import TopMenu from './Menu/TopMenu'
 import CustomMenu from './Menu/CustomMenu'
 import ContentMain from './components/ContentMain';
 
 const { Header, Sider, Content } = Layout;
-
-const SubMenu = Menu.SubMenu;
 
 class App extends Component {
   constructor(props) {
@@ -35,19 +34,8 @@ class App extends Component {
         <div>
       <Layout >
         <Layout >
-          <Header style={{ paddingLeft: 0, paddingRight: 0, height: 70, "-webkit-app-region": "drag" }}>
-            <Menu
-              theme="light"
-              mode="horizontal"
-            >
-              <SubMenu style={{ "-webkit-app-region": "no-drag" }} title={<span className="submenu-title-wrapper">菜单</span>}>
-                <Menu.Item key="exit" onClick={this.closeWindow}>退出</Menu.Item>
-              </SubMenu>
-              <SubMenu style={{ "-webkit-app-region": "no-drag" }} title={<span className="submenu-title-wrapper">帮助</span>}>
-                <Menu.Item key="guanyu">关于</Menu.Item>
-              </SubMenu>
-              <Menu.Item style={{ position: "absolute", top: 0, right: 0, "-webkit-app-region": "no-drag" }} onClick={this.closeWindow}>close</Menu.Item>
-            </Menu>
+          <Header style={{ paddingLeft: 0, paddingRight: 0, height: 40, "-webkit-app-region": "drag" }}>
+            <TopMenu/>
           </Header>
         </Layout>
         <Layout>
@@ -59,7 +47,7 @@ class App extends Component {
             <CustomMenu/>
           </Sider>
           <Layout>
-            <Header style={{ background: '#fff', padding: 0 }}>
+            <Header style={{ background: '#fff', padding: 0,height:40 }}>
               <Icon
                 className="trigger"
                 type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}

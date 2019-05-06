@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import './Video.css';
-import {Player} from 'video-react';
+// import {Player} from 'video-react';
 
 class Video extends Component{
     constructor(props){
@@ -14,7 +14,7 @@ class Video extends Component{
         return(<div>
             <div id={this.state.VideoId}>
                 {/* <Player ref="player" VideoId="video-1">
-                <source src={require("../../resources/anime.mp4")}></source>+
+                    <source src={require("../../resources/anime.mp4")}></source>+
                 </Player> */}
             </div>
             </div>

@@ -19,7 +19,7 @@ class Music extends Component {
 
     musicPlay = () =>{  
         let audio = this.refs.audio;
-        audio.play();
+        //audio.play();
     }
 
     render(){

@@ -3,7 +3,7 @@
         {
             "title":"主页",
             "icon":"home",
-            "key":"/"
+            "key":"/page/Home"
         },{
             "title":"用户",
             "icon":"user",

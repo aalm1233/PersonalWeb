@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Layout ,Icon } from 'antd';
-import {BrowserRouter} from 'react-router-dom';
+import {HashRouter} from 'react-router-dom';
 import TopMenu from './Menu/TopMenu'
 import CustomMenu from './Menu/CustomMenu'
 import ContentMain from './components/ContentMain';
+import createHistory from 'history/createHashHistory'
+
+const history = createHistory();
 
 const { Header, Sider, Content } = Layout;
 
@@ -30,7 +33,7 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <HashRouter>
         <div>
       <Layout >
         <Layout >
@@ -63,7 +66,7 @@ class App extends Component {
         </Layout>
       </Layout>
       </div>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }

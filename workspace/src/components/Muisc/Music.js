@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import { Button } from 'antd';
 
 let rotateTimer = 0;
-const mus = require('../../resources/testMusic.mp3');
+// const mus = require('../../resources/testMusic.mp3');
 
 class Music extends Component {
     constructor(props){
@@ -26,8 +26,8 @@ class Music extends Component {
        
         return(
             <div>
-            <audio src={mus}></audio>
-            <Button onClick={this.musicPlay}>play</Button>
+            {/* <audio src={mus}></audio>
+            <Button onClick={this.musicPlay}>play</Button> */}
             </div>
         )
     }

@@ -8,9 +8,6 @@ const {ipcRenderer} = electron;
 const SubMenu = Menu.SubMenu;
 class TopMenu extends Component{
   closeWindow = () => {
-    // window.opener = null;
-    // window.open('', '_self');
-    // window.close();
     ipcRenderer.send('close', 'close window')
   };
 

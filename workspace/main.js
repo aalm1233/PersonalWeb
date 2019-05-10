@@ -1,4 +1,4 @@
-const {app,BrowserWindow,ipcMain} = require('electron');
+const {app,BrowserWindow,ipcMain,dialog} = require('electron');
 const path = require('path');
 const url = require('url');
 let mainWindow;
@@ -32,9 +32,19 @@ app.on('activate',function(){
     if(mainWindow == null){
         createWindow();
     }
-})
+});
 ipcMain.on('close', (event, arg) => {
     console.log(arg);
     app.quit();
-  })
+});
+ipcMain.on('open-file-dialog',(event)=>{
+    dialog.showOpenDialog({
+        properties:['openFile','openDirectory']
+    },(files)=>{
+        if(files){
+           // event.sender.send('selected-directory',files);
+           console.log(files[0]);
+        }
+    });
+});
 

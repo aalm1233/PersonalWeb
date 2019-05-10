@@ -17,7 +17,7 @@ const gridStyle = {
 class Home extends Component{
   renderCradItem = ({key,title}) => {
     return(
-        <Card.Grid style={gridStyle}><Link to={key}>{title}</Link></Card.Grid>
+        <Card.Grid key={key} style={gridStyle}><Link to={key}>{title}</Link></Card.Grid>
     )
 }
 render(){

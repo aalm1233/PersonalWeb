@@ -1,4 +1,4 @@
-const {app,BrowserWindow} = require('electron');
+const {app,BrowserWindow,ipcMain} = require('electron');
 const path = require('path');
 const url = require('url');
 let mainWindow;
@@ -6,6 +6,12 @@ let mainWindow;
 function createWindow(){
     mainWindow = new BrowserWindow({width:1200,height:800,frame:false});
 
+    // mainWindow.loadURL(url.format({
+    //     pathname:path.join(__dirname,'./build/index.html'),
+    //     protocol:'file',
+    //     slashes:true
+    // }));
+    //加载应用---开发时配置
     mainWindow.loadURL('http://localhost:3000/');
 
     mainWindow.on('closed',function(){
@@ -27,4 +33,8 @@ app.on('activate',function(){
         createWindow();
     }
 })
+ipcMain.on('close', (event, arg) => {
+    console.log(arg);
+    app.quit();
+  })
 

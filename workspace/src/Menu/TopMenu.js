@@ -1,13 +1,18 @@
 import React,{Component} from 'react';
 import {Menu} from 'antd';
 
+const electron = window.require('electron');
+
+const {ipcRenderer} = electron;
+
 const SubMenu = Menu.SubMenu;
 class TopMenu extends Component{
-    closeWindow = () => {
-        window.opener = null;
-        window.open('', '_self');
-        window.close();
-    };
+  closeWindow = () => {
+    // window.opener = null;
+    // window.open('', '_self');
+    // window.close();
+    ipcRenderer.send('close', 'close window')
+  };
 
     render(){
         return(
@@ -16,7 +21,7 @@ class TopMenu extends Component{
             mode="horizontal"
           >
             <SubMenu style={{ "-webkit-app-region": "no-drag" }} title={<span className="submenu-title-wrapper">菜单</span>}>
-              <Menu.Item key="exit">退出</Menu.Item>
+              <Menu.Item key="exit" onClick={this.closeWindow}>退出</Menu.Item>
             </SubMenu>
             <SubMenu style={{ "-webkit-app-region": "no-drag" }} title={<span className="submenu-title-wrapper">帮助</span>}>
               <Menu.Item key="guanyu">关于</Menu.Item>

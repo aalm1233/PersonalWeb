@@ -5,11 +5,8 @@ import {HashRouter} from 'react-router-dom';
 import TopMenu from './Menu/TopMenu'
 import CustomMenu from './Menu/CustomMenu'
 import ContentMain from './components/ContentMain';
-import createHistory from 'history/createHashHistory'
-
-const history = createHistory();
-
 const { Header, Sider, Content } = Layout;
+
 
 class App extends Component {
   constructor(props) {
@@ -24,12 +21,6 @@ class App extends Component {
       collapsed: !this.state.collapsed,
     });
   }
-
-  closeWindow = () => {
-    window.opener = null;
-    window.open('', '_self');
-    window.close();
-  };
 
   render() {
     return (

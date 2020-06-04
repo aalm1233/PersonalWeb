@@ -26,15 +26,7 @@ const mainRoutes = {
   path: '/',
   component: _import('main'),
   name: 'main',
-  meta: { title: '主入口整体布局' },
-  beforeEnter (to, from, next) {
-    let token = Vue.cookie.get('token')
-    if (!token || !/\S/.test(token)) {
-      clearLoginInfo()
-      next({ name: 'login' })
-    }
-    next()
-  }
+  meta: { title: '主入口整体布局' }
 }
 
 const router = new Router({

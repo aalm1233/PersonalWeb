@@ -1,0 +1,71 @@
+{
+  "tableData": [{
+      "id": 1,
+      "label": "单据编号",
+      "prop": "billNumber"
+    },
+    {
+      "id": 15,
+      "label": "单据状态",
+      "prop": "billStatus"
+    },
+    {
+      "id": 2,
+      "label": "工单号",
+      "prop": "projectNumber"
+    },
+    {
+      "id": 3,
+      "label": "制令单号",
+      "prop": "orderNumber"
+    },
+    {
+      "id": 4,
+      "label": "排程号",
+      "prop": "planNumber"
+    },
+    {
+      "id": 5,
+      "label": "操作员",
+      "prop": "operator"
+    },
+    {
+      "id": 7,
+      "label": "操作时间",
+      "prop": "operatortime"
+    }
+  ],
+  "op": [{
+      "model": "gdnumber",
+      "ref": "gdinput",
+      "type": "gd",
+      "id": 1,
+      "label": "工单号"
+    },
+    {
+      "model": "inareainput",
+      "ref": "inareainput",
+      "type": "rkd",
+      "id": 2,
+      "label": "入库单号"
+    }, {
+      "model": "workbin",
+      "ref": "workbininut",
+      "type": "lx",
+      "id": 3,
+      "label": "料箱SN"
+    }, {
+      "model": "drawingNo",
+      "ref": "drawingnoinput",
+      "type": "th",
+      "id": 4,
+      "label": "图号"
+    }, {
+      "model": "number",
+      "ref": "numberinput",
+      "type": "number",
+      "id": 5,
+      "label": "数量"
+    }
+  ]
+}

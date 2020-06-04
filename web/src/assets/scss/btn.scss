@@ -1,0 +1,50 @@
+@import './chartsVariables.scss';
+@mixin colorBtn($color) {
+  background: $color;
+  border-color: inherit;
+  &:hover {
+    background: $color;
+    opacity:0.5;
+    border-color: inherit;
+    &:before,
+    &:after {
+      background: $color;
+    }
+  }
+}
+
+.white-btn{
+  @include colorBtn($white)
+}
+.add-btn {
+  @include colorBtn($bodybule)
+}
+.blue-btn {
+  @include colorBtn($blue)
+}
+
+.light-blue-btn {
+  @include colorBtn($light-blue)
+}
+
+.red-btn {
+  @include colorBtn($red)
+}
+
+.pink-btn {
+  @include colorBtn($pink)
+}
+
+.green-btn {
+  @include colorBtn($green)
+}
+
+.yello-btn {
+  @include colorBtn($yellow)
+}
+.panGreen-btn {
+  @include colorBtn($panGreen)
+}
+.deepdarkbule-btn {
+  @include colorBtn($deepdarkbule)
+}

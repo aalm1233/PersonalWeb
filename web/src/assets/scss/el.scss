@@ -1,0 +1,101 @@
+@import './chartsVariables.scss';
+
+.el-table td,
+.el-table th {
+  padding: 2px 0 !important;
+}
+
+.el-table thead {
+  color: #E6EEFF;
+}
+
+.el-table tr {
+  background-color: $white;
+}
+
+.el-table th {
+  background-color: $bodybule;
+}
+.el-table__row {
+  height: 66px;
+}
+
+
+.el-table--striped .el-table__body tr.el-table__row--striped td {
+  background: $coolgray !important;
+}
+
+.el-table--enable-row-hover .el-table__body tr:hover>td {
+  background-color: inherit;
+}
+
+.el-table::before {
+  background-color: transparent;
+}
+
+.el-table {
+  color: $deepdarkbule;
+}
+
+.el-table--striped .el-table__body tr.el-table__row--striped.current-row td,
+.el-table__body tr.current-row>td,
+.el-table__body tr.hover-row.current-row>td,
+.el-table__body tr.hover-row.el-table__row--striped.current-row>td,
+.el-table__body tr.hover-row.el-table__row--striped>td,
+.el-table__body tr.hover-row>td {
+  background-color: transparent;
+}
+@mixin colorCard($color) {
+  height: 100%;
+  width: 100px;
+  background: $color;
+  color: aliceblue;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.table-card-blue {
+  @include colorCard($bodybule);
+}
+.table-card-light-blue {
+  @include colorCard($light-blue);
+}
+.table-card-red {
+  @include colorCard($red);
+}
+.table-card-pink {
+  @include colorCard($pink);
+}
+.table-card-green {
+  @include colorCard($green);
+}
+.table-card-tiffany {
+  @include colorCard($tiffany);
+}
+.table-card-yellow {
+  @include colorCard($yellow);
+}
+.table-card-panGreen {
+  @include colorCard($panGreen);
+}
+.table-card-grey {
+  @include colorCard($grey);
+}
+.table-card-white{
+  @include colorCard($white);
+}
+.table-card-deepdarkbule{
+  @include colorCard($deepdarkbule);
+}
+.table-card-light-ligthyellow{
+  @include colorCard($lightligthyellow);
+}
+.table-card-light-yellow{
+  @include colorCard($lightyellow);
+}
+.table-card-light-red{
+  @include colorCard($ligthred);
+}
+.table-card-light-purple{
+  @include colorCard($lightpurple);
+}

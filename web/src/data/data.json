@@ -1,0 +1,43 @@
+{
+  "styleList": [{
+      "label": "蓝色",
+      "value": "table-card-blue",
+      "id":1
+    },
+    {
+      "label": "天蓝",
+      "value": "table-card-light-blue",
+      "id":2
+    },
+    {
+      "label": "红色",
+      "value": "table-card-red",
+      "id":3
+    },
+    {
+      "label": "粉色",
+      "value": "table-card-pink",
+      "id":4
+    },
+    {
+      "label": "绿色",
+      "value": "table-card-green",
+      "id":5
+    },
+    {
+      "label": "浅绿",
+      "value": "table-card-tiffany",
+      "id":6
+    },
+    {
+      "label": "黄色",
+      "value": "table-card-yellow",
+      "id":7
+    },
+    {
+      "label": "灰色",
+      "value": "table-card-grey",
+      "id":8
+    }
+  ]
+}

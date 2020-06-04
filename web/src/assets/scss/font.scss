@@ -1,0 +1,36 @@
+@import './chartsVariables.scss';
+@mixin colorBtn($color) {
+  color: $color;
+}
+
+
+.add-font {
+    @include colorBtn($bodybule)
+  }
+  .blue-font {
+    @include colorBtn($blue)
+  }
+  
+  .light-blue-font {
+    @include colorBtn($light-blue)
+  }
+  
+  .red-font {
+    @include colorBtn($red)
+  }
+  
+  .pink-font {
+    @include colorBtn($pink)
+  }
+  
+  .green-font {
+    @include colorBtn($green)
+  }
+  
+  .yello-font {
+    @include colorBtn($yellow)
+  }
+  .coolgray-font {
+    @include colorBtn($coolgray)
+  }
+  

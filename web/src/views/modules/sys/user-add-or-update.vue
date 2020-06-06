@@ -138,7 +138,6 @@
 </template>
 
 <script>
-import permissionsTree from "@/components/user-management/permissions-tree";
 import { isEmail, isMobile } from "@/utils/validate";
 import { treeDataTranslate } from "@/utils";
 export default {

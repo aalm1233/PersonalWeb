@@ -125,4 +125,63 @@ export const createMap = (id, data, width, height, colors, strokes) => {
     });
   }
 
+};
+export const createTestMap = (id,data,width, height)=>{
+const graph = new G6.Graph({
+  container:id,
+  width:width,
+  height:height,
+  fitView: true,
+  fitViewPadding: [20, 40, 50, 20],
+  animate:true,
+  defaultNode:{
+    size:30,
+    style:{
+      fill:'steelbule',//填充色
+      stroke:'#666',//描边色
+      lineWidth:1//描边粗细
+    },
+    //*节点上标签文本样式
+    labelCfg:{
+      style:{
+        fill:"#fff"//字体颜色
+      }
+    }
+  },
+  defaultEdge:{
+    style:{
+      opacity:0.6,
+      stroke:'grey'
+    },
+    labelCfg:{
+      autoRotate: true, // 边上的标签文本根据边的方向旋转
+    }
+  }
+});
+const nodes = data.nodes;
+nodes.forEach(node => {
+  if (!node.style) {
+    node.style = {};
+  }
+  switch (
+    node.class // 根据节点数据中的 class 属性配置图形
+  ) {
+    case 'c0': {
+      node.type = 'circle'; // class = 'c0' 时节点图形为 circle
+      break;
+    }
+    case 'c1': {
+      node.type = 'rect'; // class = 'c1' 时节点图形为 rect
+      node.size = [35, 20]; // class = 'c1' 时节点大小
+      break;
+    }
+    case 'c2': {
+      node.type = 'ellipse'; // class = 'c2' 时节点图形为 ellipse
+      node.size = [35, 20]; // class = 'c2' 时节点大小
+      break;
+    }
+  }
+});
+graph.data(data);
+graph.render();
 }

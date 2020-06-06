@@ -1,6 +1,6 @@
 <template>
   <el-row justify="center">
-    <el-col style="text-align:center" :span="8">
+    <el-col style="text-align:center" :span="2">
       <el-form :data="form" label-width="80px">
         <el-form-item label="Input"></el-form-item>
         <el-form-item label="Input">
@@ -12,13 +12,13 @@
         </el-form-item>
       </el-form>
     </el-col>
-    <el-col style="text-align:center" :span="8">
+    <!-- <el-col style="text-align:center" :span="8">
       <el-card :style="{height:windowHeight,color:'red'}">
         <div slot="header">this is a page to play so many wonderful things</div>
         <div :style="{height:windowHeight}" ref="map" id="map"></div>
       </el-card>
-    </el-col>
-    <el-col style="text-align:center" :span="8">
+    </el-col> -->
+    <el-col style="text-align:center" :span="22">
       <el-card :style="{height:windowHeight,color:'blue'}">
         <div slot="header">this is a page to play so many wonderful things</div>
         <div :style="{height:windowHeight}" ref="map1" id="map1"></div>
@@ -27,7 +27,8 @@
   </el-row>
 </template>
 <script>
-import {createMap} from '@/antv-g6';
+import { createMap,createTestMap } from "@/antv-g6";
+import map1Data from '@/data/canvas/map1.json'
 export default {
   name: "homepage",
   data() {
@@ -115,22 +116,28 @@ export default {
             description: "this is node 9, \nand the value of it is 9"
           }
         ],
-        edges: [{
-           source: '1',
-            target: '2',
-        },{
-           source: '3',
-            target: '2',
-        },{
-           source: '4',
-            target: '2',
-        },{
-           source: '5',
-            target: '2',
-        },{
-           source: '6',
-            target: '2',
-        }]
+        edges: [
+          {
+            source: "1",
+            target: "2"
+          },
+          {
+            source: "3",
+            target: "2"
+          },
+          {
+            source: "4",
+            target: "2"
+          },
+          {
+            source: "5",
+            target: "2"
+          },
+          {
+            source: "6",
+            target: "2"
+          }
+        ]
       },
       colors: [
         "#BDD2FD",
@@ -166,18 +173,16 @@ export default {
     }
   },
   methods: {
-    getWeather() {
-      this.$http({
-        url: "http://api.help.bj.cn/apis/weather/?id=101270401",
-        method: "get"
-      }).then(data => {
-        console.log(data);
-      });
+    getWeather() {},
+    createMap2() {
+      let height = this.$refs.map1.clientHeight-20;
+      let width = this.$refs.map1.clientWidth-20;
+      createTestMap("map1",map1Data, width, height,)
     },
     createMap1() {
       let height = this.$refs.map.clientHeight;
       let width = this.$refs.map.clientWidth;
-     createMap('map',this.data,width,height,this.colors,this.strokes);
+      createMap("map", this.data, width, height, this.colors, this.strokes);
     }
   }
 };

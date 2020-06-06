@@ -76,13 +76,11 @@
 </template>
 
 <script>
-import TableTreeColumn from "@/components/table-tree-column";
 import AddOrUpdate from "./role-add-or-update";
 import { treeDataTranslate } from "@/utils";
 export default {
   name: "role",
   components: {
-    TableTreeColumn,
     AddOrUpdate
   },
   data() {

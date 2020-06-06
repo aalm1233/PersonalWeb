@@ -88,7 +88,6 @@
 </template>
 
 <script>
-import TableTreeColumn from "@/components/table-tree-column";
 import AddOrUpdate from "./menu-add-or-update";
 import { treeDataTranslate } from "@/utils";
 export default {
@@ -104,7 +103,6 @@ export default {
     };
   },
   components: {
-    TableTreeColumn,
     AddOrUpdate
   },
   activated() {

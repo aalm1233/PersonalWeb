@@ -14,7 +14,7 @@
   "dependencies": {
     "@antv/g6": "^3.5.1",
     "ant-design-vue": "^1.6.2",
-    "axios": "0.18.1",
+    "axios": "0.21.1",
     "babel-plugin-component": "0.10.1",
     "babel-polyfill": "6.26.0",
     "cron-parser": "^2.15.0",

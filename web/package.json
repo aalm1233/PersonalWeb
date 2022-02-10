@@ -32,7 +32,7 @@
     "lodash": "^4.17.15",
     "moment": "^2.26.0",
     "multi-cascader-base-ele": "^1.0.22",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "sass-loader": "6.0.6",
     "svg-sprite-loader": "3.7.3",
     "v-charts": "^1.19.0",
